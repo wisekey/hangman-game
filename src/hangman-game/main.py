@@ -119,3 +119,15 @@ def open_letter_in_user_word(secret_word: str,
         if letter == l:
             user_word_list[index] = letter
     return ''.join(user_word_list)
+
+
+def print_game_information(user_word: str,
+                           used_words: set[str],
+                           attempts: int) -> None:
+    print(f'''
+Состояние висельника:
+{hangman_states[attempts - 1]}
+Использованные буквы: {', '.join(used_words)}
+Осталось попыток: {maximum_count_attempts - attempts}
+Ваше слово: {user_word}
+    ''')
