@@ -6,5 +6,6 @@ def get_nouns_from_file(filename: str) -> list[str]:
         return [noun.strip() for noun in file]
     
 
-def print_welcome_message():
+def print_welcome_message() -> None:
     print('Добро пожаловать в игру "Висельник"')
+
