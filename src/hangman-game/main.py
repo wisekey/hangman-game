@@ -1,11 +1,13 @@
 path_to_file = 'src/hangman-game/ru_nouns.txt'
 game_description = '''
+---
 "Висельник" — это словесная игра, в которой один игрок загадывает слово, а другой пытается его угадать, предлагая буквы.
 
 Правила:
     Программа выбирает слово и обозначает количество букв черточками.
     Угадывающий предлагает буквы. Если буква есть в слове, она открывается; если нет — добавляется часть тела к висельнику.
     Цель — угадать слово до завершения рисунка висельника (обычно 6-7 частей тела).
+---
 '''
 
 def get_nouns_from_file(filename: str) -> list[str]:
@@ -26,7 +28,7 @@ def print_menu() -> None:
     ''')
 
 
-def is_contains(set_of_words: set[str], letter: str) -> bool:
+def is_used_letter(set_of_words: set[str], letter: str) -> bool:
     return letter in set_of_words
 
 
