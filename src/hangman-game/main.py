@@ -135,3 +135,43 @@ def print_game_information(user_word: str,
 
 def print_winner_message(secret_word: str) -> None:
     print(f'Вы выиграли! Загаданное слово {secret_word}')
+    
+
+def start_game():
+    from random import choice
+
+    attemtps = 1
+    nouns = get_nouns_from_file(path_to_file)
+    secret_word = choice(nouns)
+    user_word = '_' * len(secret_word)
+    used_words = set()
+    is_win = True
+
+    while secret_word != user_word:
+        if attemtps >= maximum_count_attempts:
+            print('Вы проиграли')
+            is_win = False
+            break
+
+        print_game_information(user_word, used_words, attemtps)
+        letter = input('Введите предполагаемую букву:')
+
+        if not is_letter(letter):
+            print('Но это не буква! Попробуйте еще раз')
+            continue
+
+        if is_used_letter(used_words, letter):
+            print('Буква уже была введена. Попробуйте другую')
+            continue
+        
+        if is_contains(secret_word, letter):
+            user_word = open_letter_in_user_word(secret_word, user_word, letter)
+        else:
+            attemtps += 1
+            print('Такой буквы в слове нет')
+        used_words.add(letter)
+    
+    if is_win:
+        print_winner_message(secret_word)
+    else:
+        print_game_information(secret_word, used_words, attemtps)
