@@ -9,7 +9,7 @@ game_description = '''
     Цель — угадать слово до завершения рисунка висельника (обычно 6-7 частей тела).
 ---
 '''
-maximum_count_attempts = 6
+maximum_count_attempts = 7
 hangman_states = (
     '''
       -----
@@ -64,8 +64,18 @@ hangman_states = (
      /    |
           |
     =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+     /|\\  |
+     / \\  |
+          |
+    =========
     '''
 )
+
 
 def get_nouns_from_file(filename: str) -> list[str]:
     with open(filename, mode='r', encoding='utf-8') as file:
