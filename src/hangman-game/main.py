@@ -10,7 +10,62 @@ game_description = '''
 ---
 '''
 maximum_count_attempts = 6
-
+hangman_states = (
+    '''
+      -----
+      |   |
+          |
+          |
+          |
+          |
+    =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+          |
+          |
+          |
+    =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+      |   |
+          |
+          |
+    =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+     /|   |
+          |
+          |
+    =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+     /|\\  |
+          |
+          |
+    =========
+    ''',
+    '''
+      -----
+      |   |
+      O   |
+     /|\\  |
+     /    |
+          |
+    =========
+    '''
+)
 
 def get_nouns_from_file(filename: str) -> list[str]:
     with open(filename, mode='r', encoding='utf-8') as file:
