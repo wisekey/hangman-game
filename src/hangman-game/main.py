@@ -34,3 +34,7 @@ def is_used_letter(set_of_words: set[str], letter: str) -> bool:
 
 def print_game_description() -> None:
     print(game_description)
+
+
+def is_contains(word: str, letter: str) -> bool:
+    return letter in word
