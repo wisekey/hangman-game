@@ -131,3 +131,7 @@ def print_game_information(user_word: str,
 Осталось попыток: {maximum_count_attempts - attempts}
 Ваше слово: {user_word}
     ''')
+
+
+def print_winner_message(secret_word: str) -> None:
+    print(f'Вы выиграли! Загаданное слово {secret_word}')
