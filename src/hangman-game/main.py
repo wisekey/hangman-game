@@ -109,3 +109,13 @@ def is_contains(word: str, letter: str) -> bool:
 
 def is_letter(symbol: str) -> bool:
     return symbol.isalpha() and len(symbol) == 1
+
+
+def open_letter_in_user_word(secret_word: str,
+                             user_word: str,
+                             letter: str) -> str:
+    user_word_list = list(user_word)
+    for index, l in enumerate(secret_word):
+        if letter == l:
+            user_word_list[index] = letter
+    return ''.join(user_word_list)
