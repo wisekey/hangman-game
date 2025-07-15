@@ -17,3 +17,7 @@ def print_menu() -> None:
     2 - Начать игру
     3 - Завершить программу
     ''')
+
+
+def is_contains(set_of_words: set[str], letter: str) -> bool:
+    return letter in set_of_words
