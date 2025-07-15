@@ -28,3 +28,7 @@ def print_menu() -> None:
 
 def is_contains(set_of_words: set[str], letter: str) -> bool:
     return letter in set_of_words
+
+
+def print_game_description() -> None:
+    print(game_description)
