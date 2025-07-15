@@ -105,3 +105,7 @@ def print_game_description() -> None:
 
 def is_contains(word: str, letter: str) -> bool:
     return letter in word
+
+
+def is_letter(symbol: str) -> bool:
+    return symbol.isalpha() and len(symbol) == 1
