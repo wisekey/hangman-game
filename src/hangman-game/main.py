@@ -175,3 +175,26 @@ def start_game():
         print_winner_message(secret_word)
     else:
         print_game_information(secret_word, used_words, attemtps)
+
+
+def main() -> None:
+    print_welcome_message()
+
+    while True:
+        print_menu()
+        choice = input('Выберите опцию:')
+        
+        if choice == '1':
+            print_game_description()
+            continue
+        elif choice == '2':
+            start_game()
+        elif choice == '3':
+            print('Вы принудительно вышли из игры. До свидания!')
+            break
+        else:
+            print('Вы выбрали неверную опцию! Попробуйте еще раз')
+
+
+if __name__ == '__main__':
+    main()
